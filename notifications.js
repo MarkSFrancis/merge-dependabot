@@ -13,6 +13,8 @@ export async function processNotifications() {
 }
 
 function shouldViewNotification(notification) {
-  return notification.subject.type === "PullRequest" && 
-    includesIgnoreCase(orgsToMerge, notification.repository.owner.login);
+  return (
+    notification.subject.type === "PullRequest" &&
+    includesIgnoreCase(orgsToMerge, notification.repository.owner.login)
+  );
 }
