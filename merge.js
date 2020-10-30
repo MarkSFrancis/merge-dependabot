@@ -11,19 +11,42 @@ export async function mergePrs(notifications) {
 
   prs = prs.filter(shouldMergePr);
 
-  await tryMergePrs(prs);
+  if (prs.length === 0) {
+    console.log('No outstanding PRs');
+    return;
+  }
+
+  console.log(`Attempting to merge ${prs.length} PRs`);
+
+  let mergeLater = [];
+  let taken10Minutes = false;
+  const timer = setTimeout(() => (taken10Minutes = true), 1000 * 60 * 10);
+
+  do {
+    mergeLater = await tryMergePrs(prs);
+  } while (mergeLater.length > 0 || taken10Minutes);
+
+  clearTimeout(timer);
+
+  if (taken10Minutes) {
+    console.error(`Process timed out. ${mergeLater.length} PRs could not be merged`)
+    process.exitCode = 1;  
+  }
 }
 
 async function tryMergePrs(prs) {
   const mergeLater = [];
 
   for (const pr of prs) {
+    console.log(`Merging PR ${pr.url}`);
+
     if (!canMergePr(pr)) {
+      console.error(`Can't merge PR (state: ${pr.mergeable_state})`);
       mergeLater.push(pr);
       continue;
     }
 
-    if (!await tryMergePr(pr)) {
+    if (!(await tryMergePr(pr))) {
       mergeLater.push(pr);
     }
     waitFor(1000);
@@ -44,13 +67,12 @@ function canMergePr(pr) {
 }
 
 async function tryMergePr(pr) {
-  console.log(`Merging PR ${pr.url} (state: ${pr.mergeable_state})`);
-
   try {
     await api.request(`PUT ${pr.url}/merge`);
     console.log(`PR merged`);
     return true;
-  } catch {
+  } catch (ex) {
+    console.error(`PR failed to merge`, ex);
     return false;
   }
 }
