@@ -49,7 +49,8 @@ async function tryMergePrs(prs) {
     if (!(await tryMergePr(pr))) {
       mergeLater.push(pr);
     }
-    waitFor(1000);
+  
+    await waitFor(1000);
   }
 
   console.log(`${mergeLater.length} PRs waiting to be merged later`);
