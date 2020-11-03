@@ -3,28 +3,37 @@ import { createdByToMerge } from "./settings";
 import { includesIgnoreCase, waitFor } from "./utils";
 
 export async function mergePrs(notifications) {
-  let prs = await Promise.all(
-    notifications.map(
-      async (n) => (await api.request("GET " + n.subject.url)).data
-    )
-  );
-
-  prs = prs.filter(shouldMergePr);
+  let prs = await loadPrs(notifications.map(n => n.subject.url));
 
   if (prs.length === 0) {
     console.log('No outstanding PRs');
     return;
   }
 
-  console.log(`Attempting to merge ${prs.length} PRs`);
-
-  let mergeLater = [];
   let taken10Minutes = false;
   const timer = setTimeout(() => (taken10Minutes = true), 1000 * 60 * 10);
 
   do {
-    mergeLater = await tryMergePrs(prs);
-  } while (mergeLater.length > 0 || taken10Minutes);
+    console.log(`Attempting to merge ${prs.length} PRs`);
+  
+    prs = await tryMergePrs(prs);
+    
+    if (mergeLater.length === 0 || taken10Minutes) {
+      break;
+    } else {
+      console.log('Waiting for 5 minutes before retrying...', { outstandingPrs: mergeLater.map(l => l.url)});
+      await waitFor(1000 * 60);
+      console.log('Waiting for 4 minutes before retrying...');
+      await waitFor(1000 * 60);
+      console.log('Waiting for 3 minutes before retrying...');
+      await waitFor(1000 * 60);
+      console.log('Waiting for 2 minutes before retrying...');
+      await waitFor(1000 * 60);
+      console.log('Waiting for 1 minute before retrying...');
+      await waitFor(1000 * 60);
+      prs = await loadPrs(prs.map(pr => pr.url));
+    }
+  } while (true);
 
   clearTimeout(timer);
 
@@ -32,6 +41,16 @@ export async function mergePrs(notifications) {
     console.error(`Process timed out. ${mergeLater.length} PRs could not be merged`)
     process.exitCode = 1;  
   }
+}
+
+async function loadPrs(urls) {
+  const prs = await Promise.all(
+    urls.map(
+      async (n) => (await api.request("GET " + n)).data
+    )
+  );
+
+  return prs.filter(shouldMergePr);
 }
 
 async function tryMergePrs(prs) {
