@@ -18,10 +18,10 @@ export async function mergePrs(notifications) {
   
     prs = await tryMergePrs(prs);
     
-    if (mergeLater.length === 0 || taken10Minutes) {
+    if (prs.length === 0 || taken10Minutes) {
       break;
     } else {
-      console.log('Waiting for 5 minutes before retrying...', { outstandingPrs: mergeLater.map(l => l.url)});
+      console.log('Waiting for 5 minutes before retrying...', { outstandingPrs: prs.map(l => l.url)});
       await waitFor(1000 * 60);
       console.log('Waiting for 4 minutes before retrying...');
       await waitFor(1000 * 60);
@@ -38,7 +38,7 @@ export async function mergePrs(notifications) {
   clearTimeout(timer);
 
   if (taken10Minutes) {
-    console.error(`Process timed out. ${mergeLater.length} PRs could not be merged`)
+    console.error(`Process timed out. ${prs.length} PRs could not be merged`)
     process.exitCode = 1;  
   }
 }
