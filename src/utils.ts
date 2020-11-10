@@ -1,4 +1,4 @@
-export function includesIgnoreCase(items, text) {
+export function includesIgnoreCase(items: string[], text: string) {
   const txt = text.toLowerCase();
   for (let item of items) {
     if (item.toLowerCase() === txt) {
@@ -8,7 +8,7 @@ export function includesIgnoreCase(items, text) {
   return false;
 }
 
-export function waitFor(ms) {
+export function waitFor(ms: number) {
   return new Promise((resolve) => {
     const timeout = setTimeout(() => {
       clearTimeout(timeout);
