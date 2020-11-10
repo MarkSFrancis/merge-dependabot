@@ -1,4 +1,4 @@
-name: river
+name: Run on default account
 
 on: workflow_dispatch
 
