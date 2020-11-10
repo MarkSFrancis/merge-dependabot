@@ -3,8 +3,8 @@ import { createdByToMerge } from "./settings";
 import { Notifications, PR } from "./types";
 import { includesIgnoreCase, waitFor } from "./utils";
 
-export async function mergePrs(notifications: Notifications) {
-  let prs = await loadPrs(notifications.map((n) => n.subject.url));
+export async function mergePrs(prNotifications: Notifications) {
+  let prs = await loadPrs(prNotifications.map((n) => n.subject.url));
 
   if (prs.length === 0) {
     console.log("No outstanding PRs");

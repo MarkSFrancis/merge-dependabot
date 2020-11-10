@@ -13,11 +13,9 @@ export async function processNotifications() {
   }
 
   const response = await api<Notifications>("GET", "/notifications");
-  const notifications = response.data.filter(shouldViewNotification);
+  const prNotifications = response.data.filter(shouldViewNotification);
 
-  console.log(`Processing ${notifications.length} notifications`);
-
-  await mergePrs(notifications);
+  await mergePrs(prNotifications);
 }
 
 function shouldViewNotification(notification: Notifications[0]) {
