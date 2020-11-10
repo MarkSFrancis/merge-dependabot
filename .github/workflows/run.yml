@@ -21,3 +21,4 @@ jobs:
         run: yarn start
         env:
           MERGE_DEPENDABOT__TOKEN: ${{ secrets.MERGE_DEPENDABOT__TOKEN }}
+          MERGE_DEPENDABOT__MAX_ATTEMPTS: 3
