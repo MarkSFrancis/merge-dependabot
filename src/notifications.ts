@@ -1,15 +1,21 @@
 import { api } from "./api";
 import { mergePrs } from "./merge";
-import { orgsToMerge, createdByToMerge } from "./settings";
+import { settings } from "./settings";
 import { Notifications } from "./types";
 import { includesIgnoreCase } from "./utils";
 
 export async function processNotifications() {
-  if (orgsToMerge) {
-    console.log("Only merging PRs for these organisations", orgsToMerge);
+  if (settings.orgsToMerge) {
+    console.log(
+      "Only merging PRs for these organisations",
+      settings.orgsToMerge
+    );
   }
-  if (createdByToMerge) {
-    console.log("Only merging PRs created by these users", createdByToMerge);
+  if (settings.createdByToMerge) {
+    console.log(
+      "Only merging PRs created by these users",
+      settings.createdByToMerge
+    );
   }
 
   const response = await api<Notifications>("GET", "/notifications");
@@ -21,8 +27,10 @@ export async function processNotifications() {
 function shouldViewNotification(notification: Notifications[0]) {
   if (notification.subject.type !== "PullRequest") return false;
 
-  // Merge all orgs
-  if (!orgsToMerge) return false;
+  if (!settings.orgsToMerge) return true;
 
-  return includesIgnoreCase(orgsToMerge, notification.repository.owner.login);
+  return includesIgnoreCase(
+    settings.orgsToMerge,
+    notification.repository.owner.login
+  );
 }

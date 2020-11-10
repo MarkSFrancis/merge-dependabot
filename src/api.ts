@@ -1,8 +1,8 @@
 import { Octokit } from "@octokit/core";
-import { token } from './settings';
+import { settings } from './settings';
 
 const octokit = new Octokit({
-  auth: token,
+  auth: settings.token,
 });
 
 export function api<T>(method: string, url: string) {

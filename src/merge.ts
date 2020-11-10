@@ -1,5 +1,5 @@
 import { api } from "./api";
-import { createdByToMerge } from "./settings";
+import { settings } from "./settings";
 import { Notifications, PR } from "./types";
 import { includesIgnoreCase, waitFor } from "./utils";
 
@@ -11,7 +11,7 @@ export async function mergePrs(prNotifications: Notifications) {
     return;
   }
 
-  for (let attemptsCount = 0; attemptsCount < 3; attemptsCount++) {
+  for (let attemptsCount = 0; attemptsCount < settings.maxAttempts; attemptsCount++) {
     console.log(`Attempting to merge ${prs.length} PRs`);
 
     prs = await tryMergePrs(prs);
@@ -80,7 +80,7 @@ async function tryMergePrs(prs: PR[]) {
 
 function shouldMergePr(pr: PR) {
   return (
-    includesIgnoreCase(createdByToMerge, pr.user.login) && pr.state === "open"
+    includesIgnoreCase(settings.createdByToMerge, pr.user.login) && pr.state === "open"
   );
 }
 
