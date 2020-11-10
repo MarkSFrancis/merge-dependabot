@@ -20,6 +20,12 @@ Prerequisites:
 * [NodeJS](https://nodejs.org/)
 * Yarn (install with `npm i -g yarn`)
 
+Once you've set your options, open a terminal at the root and run:
+```sh
+yarn
+yarn start
+```
+
 ## Options
 
 `.env` and `.env.default` are loaded on startup, and will overwrite any variables you have set. These files are a great place to store your settings.
