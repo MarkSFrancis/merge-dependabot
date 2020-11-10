@@ -1,4 +1,4 @@
-name: Run on default account
+name: run
 
 on: workflow_dispatch
 
