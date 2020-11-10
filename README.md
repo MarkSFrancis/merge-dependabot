@@ -33,8 +33,9 @@ yarn start
 Environment Variable Key | Required | Description
 -- | -- | --
 `MERGE_DEPENDABOT__TOKEN` | Yes | Personal access token for the CLI to use when accessing the GitHub API. Get yours [here](). It needs the following permissions: `notifications`, `repo`.
-`MERGE_DEPENDABOT__ORGS_TO_MERGE` | No | A comma separated list of the organisations you want to automatically merge PRs for. If there are PRs to repositories in other organisations, the CLI will skip them
+`MERGE_DEPENDABOT__ORGS_TO_MERGE` | No | A comma separated list of the organisations you want to automatically merge PRs for. If there are PRs to repositories in other organisations, the CLI will skip them. If this is not set, PRs in all organisations will be merged
 `MERGE_DEPENDABOT__CREATED_BY_TO_MERGE` | No | A comma separated list of the authors of PRs you want to automatically merge PRs from. If this is not set, it will default to `dependabot[bot]`
+`MERGE_DEPENDABOT__MAX_ATTEMPTS` | No | The maximum number of attempts for merging PRs. This is to allow dependabot time to rebase if conflicts appear. If it is not set, it will default to `1`
 
 ### Example options
 
