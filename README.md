@@ -20,7 +20,7 @@ Prerequisites:
 * [NodeJS](https://nodejs.org/)
 * Yarn (install with `npm i -g yarn`)
 
-Once you've set your options, open a terminal at the root and run:
+Once you've set your [options](#options), open a terminal at the root and run:
 ```sh
 yarn
 yarn start
