@@ -16,3 +16,5 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Run app
         run: yarn start
+        env:
+          MERGE_DEPENDABOT__TOKEN: ${{ secrets.MERGE_DEPENDABOT__TOKEN }}
