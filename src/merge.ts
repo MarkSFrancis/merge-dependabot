@@ -80,7 +80,7 @@ async function tryMergePrs(prs: PR[]) {
 
 function shouldMergePr(pr: PR) {
   return (
-    includesIgnoreCase(settings.createdByToMerge, pr.user.login) && pr.state === "open"
+    includesIgnoreCase(settings.createdByToMerge, pr.user?.login) && pr.state === "open"
   );
 }
 
