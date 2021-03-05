@@ -8,7 +8,7 @@
   "devDependencies": {
     "@octokit/core": "^3.2.5",
     "@tsconfig/node14": "^1.0.0",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.3"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
