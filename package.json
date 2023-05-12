@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@octokit/core": "^4.2.0",
-    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node16": "^1.0.4",
     "@types/node": "^20",
     "typescript": "^5.0.4"
   },
