@@ -6,7 +6,7 @@
     "start": "ts-node src/index.ts"
   },
   "devDependencies": {
-    "@octokit/core": "^4.2.0",
+    "@octokit/core": "^4.2.1",
     "@tsconfig/node16": "^1.0.4",
     "@types/node": "^20",
     "typescript": "^5.0.4"
