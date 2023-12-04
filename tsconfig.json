@@ -1,6 +1,6 @@
-/* Optimised for NodeJs 16.x */
+/* Optimised for NodeJs 20.x */
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist"
   },
