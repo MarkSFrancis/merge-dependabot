@@ -1,8 +1,8 @@
-import { api } from "./api";
-import { mergePrs } from "./merge";
-import { settings } from "./settings";
-import { Notifications } from "./types";
-import { includesIgnoreCase } from "./utils";
+import { api } from "./api.js";
+import { mergePrs } from "./merge.js";
+import { settings } from "./settings.js";
+import { Notifications } from "./types.js";
+import { includesIgnoreCase } from "./utils.js";
 
 export async function processNotifications() {
   if (settings.orgsToMerge) {
