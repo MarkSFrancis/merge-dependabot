@@ -1,4 +1,4 @@
 import "./env";
-import { processNotifications } from "./notifications";
+import { processNotifications } from "./notifications.js";
 
 processNotifications();

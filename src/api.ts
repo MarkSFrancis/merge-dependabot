@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core";
-import { settings } from './settings';
+import { settings } from './settings.js';
 
 const octokit = new Octokit({
   auth: settings.token,
