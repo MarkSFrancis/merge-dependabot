@@ -9,7 +9,7 @@
   "devDependencies": {
     "@octokit/core": "^6.1.2",
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "typescript": "^5.5.4"
   },
   "dependencies": {
