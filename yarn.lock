@@ -127,38 +127,38 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.0.tgz#c8e119a30a7c8d60b9d2e22d2073722dde3b710b"
   integrity sha512-ZENoHJBxA20C2zFzh6AI4fT6RraMzjYw4xKWemRTRmRVtN9c5DcH9r/f2ihEkMjOW5eGgrwCslG/+Y/3bL+DHQ==
 
-"@octokit/auth-token@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@octokit/auth-token/-/auth-token-5.0.1.tgz#1b882a54587d9e58b7aebb5ae5b9a08522c822f0"
-  integrity sha512-RTmWsLfig8SBoiSdgvCht4BXl1CHU89Co5xiQ5JF19my/sIRDFCQ1RPrmK0exgqUZuNm39C/bV8+/83+MJEjGg==
+"@octokit/auth-token@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-token/-/auth-token-6.0.0.tgz#b02e9c08a2d8937df09a2a981f226ad219174c53"
+  integrity sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==
 
-"@octokit/core@^7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@octokit/core/-/core-7.0.1.tgz#e67c7ddd13888d99daa4b85e63ed1b03e48fdff9"
-  integrity sha512-XgQhCJcpLxv62d9oe8OsiYespL8WciUF0eejZlWYeV8NxjRcxsbetiPERcCIQB4F6t9FSAydSl0y84I0E23oQg==
+"@octokit/core@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@octokit/core/-/core-7.0.2.tgz#d5e44841bcb323fa95f7bd1d73ff29046381f1f0"
+  integrity sha512-ODsoD39Lq6vR6aBgvjTnA3nZGliknKboc9Gtxr7E4WDNqY24MxANKcuDQSF0jzapvGb3KWOEDrKfve4HoWGK+g==
   dependencies:
-    "@octokit/auth-token" "^5.0.0"
-    "@octokit/graphql" "^8.2.2"
-    "@octokit/request" "^9.2.3"
-    "@octokit/request-error" "^6.1.8"
+    "@octokit/auth-token" "^6.0.0"
+    "@octokit/graphql" "^9.0.1"
+    "@octokit/request" "^10.0.2"
+    "@octokit/request-error" "^7.0.0"
     "@octokit/types" "^14.0.0"
     before-after-hook "^4.0.0"
     universal-user-agent "^7.0.0"
 
-"@octokit/endpoint@^10.1.4":
-  version "10.1.4"
-  resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-10.1.4.tgz#8783be38a32b95af8bcb6523af20ab4eed7a2adb"
-  integrity sha512-OlYOlZIsfEVZm5HCSR8aSg02T2lbUWOsCQoPKfTXJwDzcHQBrVBGdGXb89dv2Kw2ToZaRtudp8O3ZIYoaOjKlA==
+"@octokit/endpoint@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-11.0.0.tgz#189fcc022721b4c49d0307eea6be3de1cfb53026"
+  integrity sha512-hoYicJZaqISMAI3JfaDr1qMNi48OctWuOih1m80bkYow/ayPw6Jj52tqWJ6GEoFTk1gBqfanSoI1iY99Z5+ekQ==
   dependencies:
     "@octokit/types" "^14.0.0"
     universal-user-agent "^7.0.2"
 
-"@octokit/graphql@^8.2.2":
-  version "8.2.2"
-  resolved "https://registry.yarnpkg.com/@octokit/graphql/-/graphql-8.2.2.tgz#3db48c4ffdf07f99600cee513baf45e73eced4d1"
-  integrity sha512-Yi8hcoqsrXGdt0yObxbebHXFOiUA+2v3n53epuOg1QUgOB6c4XzvisBNVXJSl8RYA5KrDuSL2yq9Qmqe5N0ryA==
+"@octokit/graphql@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/graphql/-/graphql-9.0.1.tgz#eb258fc9981403d2d751720832652c385b6c1613"
+  integrity sha512-j1nQNU1ZxNFx2ZtKmL4sMrs4egy5h65OMDmSbVyuCzjOcwsHq6EaYjOTGXPQxgfiN8dJ4CriYHk6zF050WEULg==
   dependencies:
-    "@octokit/request" "^9.2.3"
+    "@octokit/request" "^10.0.2"
     "@octokit/types" "^14.0.0"
     universal-user-agent "^7.0.0"
 
@@ -167,22 +167,22 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-25.0.0.tgz#adeead36992abf966e89dcd53518d8b0dc910e0d"
   integrity sha512-FZvktFu7HfOIJf2BScLKIEYjDsw6RKc7rBJCdvCTfKsVnx2GEB/Nbzjr29DUdb7vQhlzS/j8qDzdditP0OC6aw==
 
-"@octokit/request-error@^6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-6.1.8.tgz#3c7ce1ca6721eabd43dbddc76b44860de1fdea75"
-  integrity sha512-WEi/R0Jmq+IJKydWlKDmryPcmdYSVjL3ekaiEL1L9eo1sUnqMJ+grqmC9cjk7CA7+b2/T397tO5d8YLOH3qYpQ==
+"@octokit/request-error@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-7.0.0.tgz#48ae2cd79008315605d00e83664891a10a5ddb97"
+  integrity sha512-KRA7VTGdVyJlh0cP5Tf94hTiYVVqmt2f3I6mnimmaVz4UG3gQV/k4mDJlJv3X67iX6rmN7gSHCF8ssqeMnmhZg==
   dependencies:
     "@octokit/types" "^14.0.0"
 
-"@octokit/request@^9.2.3":
-  version "9.2.3"
-  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-9.2.3.tgz#00d023ad690903d952e4dd31e3f5804ef98fcd24"
-  integrity sha512-Ma+pZU8PXLOEYzsWf0cn/gY+ME57Wq8f49WTXA8FMHp2Ps9djKw//xYJ1je8Hm0pR2lU9FUGeJRWOtxq6olt4w==
+"@octokit/request@^10.0.2":
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-10.0.2.tgz#29187c12e7320aa56129c42e797d179035b573bb"
+  integrity sha512-iYj4SJG/2bbhh+iIpFmG5u49DtJ4lipQ+aPakjL9OKpsGY93wM8w06gvFbEQxcMsZcCvk5th5KkIm2m8o14aWA==
   dependencies:
-    "@octokit/endpoint" "^10.1.4"
-    "@octokit/request-error" "^6.1.8"
+    "@octokit/endpoint" "^11.0.0"
+    "@octokit/request-error" "^7.0.0"
     "@octokit/types" "^14.0.0"
-    fast-content-type-parse "^2.0.0"
+    fast-content-type-parse "^3.0.0"
     universal-user-agent "^7.0.2"
 
 "@octokit/types@^14.0.0":
@@ -245,10 +245,10 @@ esbuild@~0.25.0:
     "@esbuild/win32-ia32" "0.25.0"
     "@esbuild/win32-x64" "0.25.0"
 
-fast-content-type-parse@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/fast-content-type-parse/-/fast-content-type-parse-2.0.0.tgz#dea7bfd385e4f18e69f37d309431a4b48470fece"
-  integrity sha512-fCqg/6Sps8tqk8p+kqyKqYfOF0VjPNYrqpLiqNl0RBKmD80B080AJWVV6EkSkscjToNExcXg1+Mfzftrx6+iSA==
+fast-content-type-parse@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fast-content-type-parse/-/fast-content-type-parse-3.0.0.tgz#5590b6c807cc598be125e6740a9fde589d2b7afb"
+  integrity sha512-ZvLdcY8P+N8mGQJahJV5G4U88CSvT1rP8ApL6uETe88MBXrBHAkZlSEySdUlyztF7ccb+Znos3TFqaepHxdhBg==
 
 fsevents@~2.3.3:
   version "2.3.3"
