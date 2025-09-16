@@ -7,7 +7,7 @@
     "start": "tsx src/index.ts"
   },
   "devDependencies": {
-    "@octokit/core": "^7.0.3",
+    "@octokit/core": "^7.0.4",
     "@tsconfig/node20": "^20.1.6",
     "@types/node": "^24",
     "typescript": "^5.9.2"
