@@ -10,7 +10,7 @@
     "@octokit/core": "^7.0.5",
     "@tsconfig/node20": "^20.1.6",
     "@types/node": "^24",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
