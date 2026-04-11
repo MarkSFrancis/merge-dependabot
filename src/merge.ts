@@ -1,6 +1,6 @@
 import { api } from "./api.ts";
 import { settings } from "./settings.ts";
-import { Notifications, PR } from "./types.ts";
+import type { Notifications, PR } from "./types.ts";
 import { includesIgnoreCase, waitFor } from "./utils.ts";
 
 export async function mergePrs(prNotifications: Notifications) {

@@ -1,7 +1,7 @@
 import { api } from "./api.ts";
 import { mergePrs } from "./merge.ts";
 import { settings } from "./settings.ts";
-import { Notifications } from "./types.ts";
+import type { Notifications } from "./types.ts";
 import { includesIgnoreCase } from "./utils.ts";
 
 export async function processNotifications() {
