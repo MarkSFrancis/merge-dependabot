@@ -1,20 +1,20 @@
-import { api } from "./api.js";
-import { mergePrs } from "./merge.js";
-import { settings } from "./settings.js";
-import { Notifications } from "./types.js";
-import { includesIgnoreCase } from "./utils.js";
+import { api } from "./api.ts";
+import { mergePrs } from "./merge.ts";
+import { settings } from "./settings.ts";
+import { Notifications } from "./types.ts";
+import { includesIgnoreCase } from "./utils.ts";
 
 export async function processNotifications() {
   if (settings.orgsToMerge) {
     console.log(
       "Only merging PRs for these organisations",
-      settings.orgsToMerge
+      settings.orgsToMerge,
     );
   }
   if (settings.createdByToMerge) {
     console.log(
       "Only merging PRs created by these users",
-      settings.createdByToMerge
+      settings.createdByToMerge,
     );
   }
 
@@ -31,6 +31,6 @@ function shouldViewNotification(notification: Notifications[0]) {
 
   return includesIgnoreCase(
     settings.orgsToMerge,
-    notification.repository.owner.login
+    notification.repository.owner.login,
   );
 }

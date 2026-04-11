@@ -1,13 +1,7 @@
-/* Optimised for NodeJs 20.x */
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  }
 }

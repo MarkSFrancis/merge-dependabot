@@ -1,7 +1,7 @@
-import { api } from "./api.js";
-import { settings } from "./settings.js";
-import { Notifications, PR } from "./types.js";
-import { includesIgnoreCase, waitFor } from "./utils.js";
+import { api } from "./api.ts";
+import { settings } from "./settings.ts";
+import { Notifications, PR } from "./types.ts";
+import { includesIgnoreCase, waitFor } from "./utils.ts";
 
 export async function mergePrs(prNotifications: Notifications) {
   let prs = await loadPrs(prNotifications.map((n) => n.subject.url));

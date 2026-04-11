@@ -4,16 +4,15 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts"
+    "start": "node src/index.ts"
   },
   "devDependencies": {
     "@octokit/core": "^7.0.6",
-    "@tsconfig/node20": "^20.1.9",
-    "@types/node": "^25",
-    "typescript": "^5.9.3"
+    "@tsconfig/node-lts": "^24.0.0",
+    "@types/node": "^24",
+    "typescript": "^6.0.2"
   },
   "dependencies": {
-    "dotenv": "^17.4.1",
-    "tsx": "^4.21.0"
+    "dotenv": "^17.4.1"
   }
 }
