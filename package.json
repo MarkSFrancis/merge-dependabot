@@ -7,7 +7,7 @@
     "start": "node src/index.ts"
   },
   "devDependencies": {
-    "@octokit/core": "^7.0.6",
+    "@octokit/core": "^7.0.7",
     "@tsconfig/node-lts": "^24.0.0",
     "@types/node": "^26",
     "typescript": "^7.0.2"
